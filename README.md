@@ -16,7 +16,7 @@ to start using the docker container follow:
 * 1) Build and run the container
 * 2) Quick container start-up 
 
-## 1) Build and running the container 
+## 1) Build and run the container 
 
 ### Clone this repository
 
@@ -51,10 +51,11 @@ docker run -p 4040:4040 -p 8888:8888 -p 23:22 -ti --privileged kafkasparkgio
 
 Note that any changes you make in the notebook will be lost once you exit de container. In order to keep the changes, it is necessary put your notebooks in a folder on your host, that you share with the container, using for example
 
-####  Important
+### Keynote for 1) and 2)
 
 * The "-v `pwd`:/home/guest/host" shares the local folder (i.e. folder containing Dockerfile, ipynb files, etc...) on your computer - the 'host') with the container in the '/home/guest/host' folder. 
-* Port are shared as follows:
+
+* Ports are shared as follows:
     * 4040 bridges to Spark UI
     * 8888 bridges to the Jupyter Notebook
     * 23 bridges to SSH
