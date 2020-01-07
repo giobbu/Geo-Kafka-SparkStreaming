@@ -1,4 +1,4 @@
-# Docker container for Kafka - Spark streaming 
+# Docker container for Kafka - Spark streaming (PySaprk)
 
 This Dockerfile sets up a complete streaming environment for experimenting with Kafka and Spark streaming (PySpark). It installs
 
