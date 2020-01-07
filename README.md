@@ -9,7 +9,7 @@ It additionnally installs
 
 * Anaconda distribution for Python 3.7
 * Jupyter notebook for Python 
-* Geopandas python package for geospatial data
+* Geopandas python package for geospatial data (http://geopandas.org/index.html)
 
 #### Container configuration details
 
