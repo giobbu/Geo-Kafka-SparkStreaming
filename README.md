@@ -1,4 +1,4 @@
-# Docker container for Kafka - Spark streaming (PySpark)
+# Docker container for Kafka - Spark Streaming (PySpark)
 
 This Dockerfile sets up a complete streaming environment for experimenting with Kafka and Spark streaming (PySpark). It installs
 
@@ -16,7 +16,7 @@ It additionnally installs
 ### Clone this repository
 
 ```
-$ git clone https://github.com/****
+$ git clone https://github.com/kafkasparkgio
 ```
 
 ### Build
@@ -24,7 +24,7 @@ $ git clone https://github.com/****
 From Dockerfile folder, run
 
 ```
-docker build -t **** .
+docker build -t kafkasparkgio .
 ```
 
 It may take some time to complete.
@@ -32,16 +32,16 @@ It may take some time to complete.
 ### Run
 
 ```
-docker run -v `pwd`:/home/guest/host -p 4040:4040 -p 8888:8888 -p 23:22 -ti --privileged ****
+docker run -v `pwd`:/home/guest/host -p 4040:4040 -p 8888:8888 -p 23:22 -ti --privileged kafkasparkgio
 ```
 
 
 # Quick start-up guide
 
-Run container using [DockerHub image](https://hub.docker.com/giobbu/***)
+Run container using [DockerHub image](https://hub.docker.com/giobbu/kafkasparkgio)
 
 ```
-docker run -p 4040:4040 -p 8888:8888 -p 23:22 -ti --privileged ****
+docker run -p 4040:4040 -p 8888:8888 -p 23:22 -ti --privileged kafkasparkgio
 ```
 
 Note that any changes you make in the notebook will be lost once you exit de container. In order to keep the changes, it is necessary put your notebooks in a folder on your host, that you share with the container, using for example
