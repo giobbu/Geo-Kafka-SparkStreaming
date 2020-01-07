@@ -11,6 +11,31 @@ It additionnally installs
 * Jupyter notebook for Python 
 * Geopandas python package for geospatial data
 
+# Build and running the container from scratch
+
+### Clone this repository
+
+```
+git clone https://github.com/gburoni/****
+```
+
+### Build
+
+From Dockerfile folder, run
+
+```
+docker build -t kafkaSparkstreaming .
+```
+
+It may take some time to complete.
+
+### Run
+
+```
+docker run -v `pwd`:/home/guest/host -p 4040:4040 -p 8888:8888 -p 23:22 -ti --privileged kafkaSparkstreaming
+```
+
+
 
 # Quick start-up guide
 
@@ -109,26 +134,3 @@ In order to make sharing of folders easier between the container and your host, 
 echo $UID
 ```
 
-# Build and running the container from scratch
-
-### Clone this repository
-
-```
-git clone https://github.com/Yannael/kafka-sparkstreaming-cassandra
-```
-
-### Build
-
-From Dockerfile folder, run
-
-```
-docker build -t kafka-sparkstreaming-cassandra .
-```
-
-It may take about 30 minutes to complete.
-
-### Run
-
-```
-docker run -v `pwd`:/home/guest/host -p 4040:4040 -p 8888:8888 -p 23:22 -ti --privileged kafka-sparkstreaming-cassandra
-```
