@@ -1,4 +1,4 @@
-# Docker container for Kafka - Spark streaming (PySaprk)
+# Docker container for Kafka - Spark streaming (PySpark)
 
 This Dockerfile sets up a complete streaming environment for experimenting with Kafka and Spark streaming (PySpark). It installs
 
@@ -16,7 +16,7 @@ It additionnally installs
 ### Clone this repository
 
 ```
-git clone https://github.com/gburoni/****
+$ git clone https://github.com/****
 ```
 
 ### Build
@@ -24,7 +24,7 @@ git clone https://github.com/gburoni/****
 From Dockerfile folder, run
 
 ```
-docker build -t kafkaSparkstreaming .
+docker build -t **** .
 ```
 
 It may take some time to complete.
@@ -32,24 +32,19 @@ It may take some time to complete.
 ### Run
 
 ```
-docker run -v `pwd`:/home/guest/host -p 4040:4040 -p 8888:8888 -p 23:22 -ti --privileged kafkaSparkstreaming
+docker run -v `pwd`:/home/guest/host -p 4040:4040 -p 8888:8888 -p 23:22 -ti --privileged ****
 ```
-
 
 
 # Quick start-up guide
 
-Run container using [DockerHub image](https://hub.docker.com/r/yannael/kafka-sparkstreaming-cassandra)
+Run container using [DockerHub image](https://hub.docker.com/giobbu/***)
 
 ```
-docker run -p 4040:4040 -p 8888:8888 -p 23:22 -ti --privileged yannael/kafka-sparkstreaming-cassandra
+docker run -p 4040:4040 -p 8888:8888 -p 23:22 -ti --privileged ****
 ```
 
 Note that any changes you make in the notebook will be lost once you exit de container. In order to keep the changes, it is necessary put your notebooks in a folder on your host, that you share with the container, using for example
-
-```
-docker run -v `pwd`:/home/guest/host -p 4040:4040 -p 8888:8888 -p 23:22 -ti --privileged yannael/kafka-sparkstreaming-cassandra
-```
 
 Note:
 
@@ -72,7 +67,6 @@ where 'containerIP' is the IP of th container (127.0.0.1 on Linux). Password is 
 Once run, you are logged in as root in the container. Run the startup_script.sh (in /usr/bin) to start
 
 * SSH server. You can connect to the container using user 'guest' and password 'guest'
-* Cassandra
 * Zookeeper server
 * Kafka server
 
