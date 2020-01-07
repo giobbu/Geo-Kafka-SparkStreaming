@@ -12,8 +12,8 @@ It additionnally installs
 * Geopandas python package for geospatial data
 
 to start using the docker container follow:
-*** 1) Build and run the container
-*** 2) Quick container start-up 
+* 1) Build and run the container
+* 2) Quick container start-up 
 
 ## 1) Build and running the container 
 
