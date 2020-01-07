@@ -1,6 +1,6 @@
-# Docker container for Kafka - Spark streaming - Cassandra
+# Docker container for Kafka - Spark streaming 
 
-This Dockerfile sets up a complete streaming environment for experimenting with Kafka, Spark streaming (PySpark), and Cassandra. It installs
+This Dockerfile sets up a complete streaming environment for experimenting with Kafka and Spark streaming (PySpark). It installs
 
 * Kafka 0.10.2.1
 * Spark 2.1.1 for Scala 2.11
@@ -19,11 +19,6 @@ Run container using [DockerHub image](https://hub.docker.com/r/yannael/kafka-spa
 ```
 docker run -p 4040:4040 -p 8888:8888 -p 23:22 -ti --privileged yannael/kafka-sparkstreaming-cassandra
 ```
-
-See following video for usage demo.
-<br>
-<a href="https://www.youtube.com/watch?v=XxCFo7BzNQ8" target="_blank"><img src="http://img.youtube.com/vi/XxCFo7BzNQ8/0.jpg" 
-alt="Demo" width="480" height="360" border="10" align="center"/></a>
 
 Note that any changes you make in the notebook will be lost once you exit de container. In order to keep the changes, it is necessary put your notebooks in a folder on your host, that you share with the container, using for example
 
