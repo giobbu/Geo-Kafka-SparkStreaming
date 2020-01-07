@@ -11,7 +11,11 @@ It additionnally installs
 * Jupyter notebook for Python 
 * Geopandas python package for geospatial data
 
-# Build and running the container from scratch
+to start using the docker container follow:
+* 1) Build and running the container
+* 2) Quick container start-up 
+
+## 1) Build and running the container 
 
 ### Clone this repository
 
@@ -36,7 +40,7 @@ docker run -v `pwd`:/home/guest/host -p 4040:4040 -p 8888:8888 -p 23:22 -ti --pr
 ```
 
 
-# Quick start-up guide
+## 2) Quick container start-up 
 
 Run container using [DockerHub image](https://hub.docker.com/giobbu/kafkasparkgio)
 
