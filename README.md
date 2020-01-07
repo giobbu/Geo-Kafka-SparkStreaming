@@ -39,10 +39,10 @@ echo $UID
 
 to start using the docker container follow:
 
-* 1) Build and run the container
-* 2) Quick container start-up 
+1) Build and run the container
+2) Quick container start-up 
 
-## 1) Build and run the container 
+## 1. Build and run the container 
 
 ### Clone this repository
 
@@ -67,7 +67,7 @@ docker run -v `pwd`:/home/guest/host -p 4040:4040 -p 8888:8888 -p 23:22 -ti --pr
 ```
 
 
-## 2) Quick container start-up 
+## 2. Quick container start-up 
 
 Run container using [DockerHub image](https://hub.docker.com/giobbu/kafkasparkgio)
 
@@ -77,7 +77,7 @@ docker run -p 4040:4040 -p 8888:8888 -p 23:22 -ti --privileged kafkasparkgio
 
 Note that any changes you make in the notebook will be lost once you exit de container. In order to keep the changes, it is necessary put your notebooks in a folder on your host, that you share with the container, using for example
 
-### Note for 1) and 2)
+### Note for 1. and 2.
 
 * The "-v `pwd`:/home/guest/host" shares the local folder (i.e. folder containing Dockerfile, ipynb files, etc...) on your computer - the 'host') with the container in the '/home/guest/host' folder. 
 
@@ -94,7 +94,7 @@ ssh -p 23 guest@containerIP
 
 where 'containerIP' is the IP of th container (127.0.0.1 on Linux). Password is 'guest'.
 
-## Start services
+## Start Services
 
 Once run, you are logged in as root in the container. Run the startup_script.sh to start
 
