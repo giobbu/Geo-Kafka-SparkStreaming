@@ -11,6 +11,32 @@ It additionnally installs
 * Jupyter notebook for Python 
 * Geopandas python package for geospatial data
 
+#### Container configuration details
+
+The container is based on CentOS 6 Linux distribution. The main steps of the building process are
+
+* Install some common Linux tools (wget, unzip, tar, ssh tools, ...), and Java (1.8)
+* Create a guest user (UID important for sharing folders with host!, see below), and install Spark and sbt, Kafka, Anaconda and Jupyter notbooks for the guest user
+* Go back to root user, and install startup script (for starting SSH and Cassandra services), sentenv.sh script to set up environment variables (JAVA, Kafka, Spark, ...), spark-default.conf, and Cassandra 
+
+
+#### User UID
+
+In the Dockerfile, the line
+
+```
+RUN useradd guest -u 1000
+```
+
+creates the user under which the container will be run as a guest user. The username is 'guest', with password 'guest', and the '-u' parameter sets the linux UID for that user.
+
+In order to make sharing of folders easier between the container and your host, **make sure this UID matches your user UID on the host**. You can see what your host UID is with
+
+```
+echo $UID
+```
+
+
 to start using the docker container follow:
 
 * 1) Build and run the container
@@ -51,7 +77,7 @@ docker run -p 4040:4040 -p 8888:8888 -p 23:22 -ti --privileged kafkasparkgio
 
 Note that any changes you make in the notebook will be lost once you exit de container. In order to keep the changes, it is necessary put your notebooks in a folder on your host, that you share with the container, using for example
 
-### Keynote for 1) and 2)
+### Note for 1) and 2)
 
 * The "-v `pwd`:/home/guest/host" shares the local folder (i.e. folder containing Dockerfile, ipynb files, etc...) on your computer - the 'host') with the container in the '/home/guest/host' folder. 
 
@@ -68,9 +94,9 @@ ssh -p 23 guest@containerIP
 
 where 'containerIP' is the IP of th container (127.0.0.1 on Linux). Password is 'guest'.
 
-### Start services
+## Start services
 
-Once run, you are logged in as root in the container. Run the startup_script.sh (in /usr/bin) to start
+Once run, you are logged in as root in the container. Run the startup_script.sh to start
 
 * SSH server. You can connect to the container using user 'guest' and password 'guest'
 * Zookeeper server
@@ -80,7 +106,7 @@ Once run, you are logged in as root in the container. Run the startup_script.sh 
 startup_script.sh
 ```
 
-### Connect, create Cassandra table, open notebook and start streaming
+### Connect, open notebook and start streaming
 
 Connect as user 'guest' and go to 'host' folder (shared with the host)
 
@@ -98,39 +124,14 @@ and connect from your browser at port host:8888 (where 'host' is the IP for your
 
 #### Start Kafka producer
 
-Open kafkaSendDataPy.ipynb and run all cells.
+Open kafkaSendOBUData.ipynb and run all cells.
 
 #### Start Kafka receiver
 
-Open kafkaReceiveAndSaveToCassandraPy.ipynb and run cells up to start streaming. Check in subsequent cells that Cassandra collects data properly.
+Open kafkaSparkReceive.ipynb and run cells up to start streaming.
 
 #### Connect to Spark UI
 
-It is available in your browser at port 4040
+It is available in your browser at port 4040.
 
-
-# Container configuration details
-
-The container is based on CentOS 6 Linux distribution. The main steps of the building process are
-
-* Install some common Linux tools (wget, unzip, tar, ssh tools, ...), and Java (1.8)
-* Create a guest user (UID important for sharing folders with host!, see below), and install Spark and sbt, Kafka, Anaconda and Jupyter notbooks for the guest user
-* Go back to root user, and install startup script (for starting SSH and Cassandra services), sentenv.sh script to set up environment variables (JAVA, Kafka, Spark, ...), spark-default.conf, and Cassandra 
-
-
-### User UID
-
-In the Dockerfile, the line
-
-```
-RUN useradd guest -u 1000
-```
-
-creates the user under which the container will be run as a guest user. The username is 'guest', with password 'guest', and the '-u' parameter sets the linux UID for that user.
-
-In order to make sharing of folders easier between the container and your host, **make sure this UID matches your user UID on the host**. You can see what your host UID is with
-
-```
-echo $UID
-```
 
