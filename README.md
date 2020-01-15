@@ -32,20 +32,20 @@ docker pull giobbu/kafkasparkgio
 Create a folder and cd into it.
 
 ```
-mkdir PROJECT 
-cd PROJECT  
+mkdir Geospatial_KafkaSpark 
+cd Geospatial_KafkaSpark 
 ```
 
 Git clone the repository for the course
 
 ```
-git clone https://github.com/Yannael/BigDataAnalytics_INFOH515
+git clone https://github.com/giobbu/Geospatial_KafkaSpark
 ```
 
-Cd to the `BigDataAnalytics_INFOH515` folder
+Cd to the `Geospatial_KafkaSpark` folder
 
 ```
-cd BigDataAnalytics_INFOH515
+cd Geospatial_KafkaSpark
 ```
 
 Finally, give recursive permission to all for writing to it (ease the sharing with Docker container)
@@ -54,15 +54,14 @@ Finally, give recursive permission to all for writing to it (ease the sharing wi
 chmod -R a+rwx .
 ```
 
-The Docker container should now be able to read/write to your host ```bda_course``` folder.
 
 ### 3.2. Start container
 
 
-**From the ```BigDataAnalytics_INFOH515 ``` folder**, start the container with
+**From the ```Geospatial_KafkaSpark ``` folder**, start the container with
 
 ```
-docker run -v `pwd`:/home/guest/shared -p 8888:8888 -p 4040:4040 -it yannael/bda_advancedanalytics bash
+docker run -v `pwd`:/home/guest/shared -p 8888:8888 -p 4040:4040 -it giobbu/Geospatial_KafkaSpark
 ```
 
 Notes
