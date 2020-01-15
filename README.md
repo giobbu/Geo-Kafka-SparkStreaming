@@ -13,7 +13,7 @@ It additionnally installs
 
 ## 0. Docker installation
 
-Docker is a software container platform, which allows to isolate OS environments. Its main benefits over virtual machines are a reduced footprint (starting from 60MB for a Linux distribution - for example [ubuntu](https://hub.docker.com/_/ubuntu/)), and an easy way reconfigure an OS environment. Note: The Docker container for this course is 5GB, mostly due to the Anaconda (>1GB) and Spark (>1GB) distributions. A VirtualBox VM with the same configuration would take around 9GB.
+Docker is a software container platform, which allows to isolate OS environments. Its main benefits over virtual machines are a reduced footprint (starting from 60MB for a Linux distribution - for example [ubuntu](https://hub.docker.com/_/ubuntu/)), and an easy way reconfigure an OS environment. Note: The Docker container for this course is 7.7GB, mostly due to the Anaconda (>1GB) and Spark (>1GB) distributions.
 
 For more information on Docker, see: 
 
@@ -180,7 +180,7 @@ For example, to connect to the Jupyter Notebook, you should open your browser at
 The [Docker Toolbox](https://docs.docker.com/toolbox/toolbox_install_windows/) on Windows 10 Home shares by default only the primary hard drive (i.e. the one where Windows is installed -> C:).
 
 In case your machine has more than one hard disk two solutions exists:
-- Either the bda_course folder has to be located on the main hard drive (C:) 
+- Either the Geospatial_KafkaSpark folder has to be located on the main hard drive (C:) 
 - Or, a manual mountpoint to the second hard drive must be created in the configuration of VirtualBox (the provisioner running the virtual machine containing Docker Engine) as described [here](https://stackoverflow.com/questions/48828406/unable-to-share-volume-with-docker-toolbox-on-windows-10).
 
 ### and NOW ENJOY IT !! 
