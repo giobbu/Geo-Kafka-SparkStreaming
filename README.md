@@ -61,7 +61,8 @@ chmod -R a+rwx .
 **From the ```Geospatial_KafkaSpark ``` folder**, start the container with
 
 ```
-docker run -v `pwd`:/home/guest/shared -p 8888:8888 -p 4040:4040 -it giobbu/Geospatial_KafkaSpark
+docker run -v `pwd`:/home/guest/host -p 4040:4040 -p 8888:8888 -p 23:22 -ti --privileged giobbu/Geospatial_KafkaSpark
+
 ```
 
 Notes
@@ -77,6 +78,11 @@ You are logged in as root. Change user to guest
 su guest
 cd 
 ```
+
+
+
+
+
 
 ```
 docker run -p 4040:4040 -p 8888:8888 -p 23:22 -ti --privileged kafkasparkgio
