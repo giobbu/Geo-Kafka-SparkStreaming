@@ -147,4 +147,4 @@ In order to make sharing of folders easier between the container and your host, 
 ```
 echo $UID
 ```
-### and now ENJOY !! 
+### and NOW ENJOY IT !! 
