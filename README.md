@@ -93,3 +93,58 @@ Once run, you are logged in as root in the container. Run the startup_script.sh 
 ```
 startup_script.sh
 ```
+
+### Connect, open notebook and start streaming
+
+Connect as user 'guest' and go to 'host' folder (shared with the host)
+
+```
+su guest
+```
+
+Start Jupyter notebook
+
+```
+notebook
+```
+
+and connect from your browser at port host:8888 (where 'host' is the IP for your host. If run locally on your computer, this should be 127.0.0.1 or 192.168.99.100, check Docker documentation)
+
+#### Start Kafka producer
+
+Open OBUcsvToKafka.ipynb and run all cells.
+
+#### Start Kafka receiver
+
+Open sparkStreamingPredictionsOBU.ipynb and run cells up to start streaming.
+
+#### Connect to Spark UI
+
+It is available in your browser at port 4040
+
+
+# Container configuration details
+
+The container is based on CentOS 6 Linux distribution. The main steps of the building process are
+
+* Install some common Linux tools (wget, unzip, tar, ssh tools, ...), and Java (1.8)
+* Create a guest user (UID important for sharing folders with host!, see below), and install Spark and sbt, Kafka, Anaconda and Jupyter notbooks for the guest user
+* Go back to root user, and install startup script (for starting SSH), sentenv.sh script to set up environment variables (JAVA, Kafka, Spark, ...)and spark-default.conf 
+
+
+### User UID
+
+In the Dockerfile, the line
+
+```
+RUN useradd guest -u 1000
+```
+
+creates the user under which the container will be run as a guest user. The username is 'guest', with password 'guest', and the '-u' parameter sets the linux UID for that user.
+
+In order to make sharing of folders easier between the container and your host, **make sure this UID matches your user UID on the host**. You can see what your host UID is with
+
+```
+echo $UID
+```
+### and now ENJOY !! 
