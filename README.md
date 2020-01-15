@@ -147,4 +147,23 @@ In order to make sharing of folders easier between the container and your host, 
 ```
 echo $UID
 ```
+
+## Troubleshooting
+
+#### Issue: 127.0.0.1 refused to connect
+
+On some versions of Mac OSX and Windows, the [Docker Toolbox](https://docs.docker.com/toolbox/toolbox_install_windows/) is used instead of the native Docker Engine on the system.
+
+In this case, instead of connecting to the IP address of the localhost (i.e. 127.0.0.1), one should connect to the IP address of the virtual machine where the Docker Engine is running (192.168.99.100, by default).
+
+For example, to connect to the Jupyter Notebook, you should open your browser at 192.168.99.100:8888
+
+#### Issue: Shared folder empty
+
+The [Docker Toolbox](https://docs.docker.com/toolbox/toolbox_install_windows/) on Windows 10 Home shares by default only the primary hard drive (i.e. the one where Windows is installed -> C:).
+
+In case your machine has more than one hard disk two solutions exists:
+- Either the bda_course folder has to be located on the main hard drive (C:) 
+- Or, a manual mountpoint to the second hard drive must be created in the configuration of VirtualBox (the provisioner running the virtual machine containing Docker Engine) as described [here](https://stackoverflow.com/questions/48828406/unable-to-share-volume-with-docker-toolbox-on-windows-10).
+
 ### and NOW ENJOY IT !! 
