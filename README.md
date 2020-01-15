@@ -32,8 +32,8 @@ docker pull giobbu/kafkasparkgio
 Create a folder and cd into it.
 
 ```
-mkdir Geospatial_KafkaSpark 
-cd Geospatial_KafkaSpark 
+mkdir Folder_Geospatial_KafkaSpark 
+cd Folder_Geospatial_KafkaSpark 
 ```
 
 Git clone the repository for the course
@@ -54,6 +54,7 @@ Finally, give recursive permission to all for writing to it (ease the sharing wi
 chmod -R a+rwx .
 ```
 
+The Docker container should now be able to read/write to your host ```Geospatial_KafkaSpark``` folder.
 
 ### 3.2. Start container
 
