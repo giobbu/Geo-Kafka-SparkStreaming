@@ -11,11 +11,28 @@ It additionnally installs
 * Jupyter notebook for Python; 
 * Geopandas python package for geospatial data (http://geopandas.org/index.html).
 
+## 0. Docker installation
 
+Docker is a software container platform, which allows to isolate OS environments. Its main benefits over virtual machines are a reduced footprint (starting from 60MB for a Linux distribution - for example [ubuntu](https://hub.docker.com/_/ubuntu/)), and an easy way reconfigure an OS environment. Note: The Docker container for this course is 5GB, mostly due to the Anaconda (>1GB) and Spark (>1GB) distributions. A VirtualBox VM with the same configuration would take around 9GB.
 
-In order to avoid building the image from scratch, a prebuilt image is made available from DockerHub, see below.
+For more information on Docker, see: 
+
+* https://www.docker.com/what-docker
+* https://en.wikipedia.org/wiki/Docker_(software)
+
+**To download and install, see**: (NB: install the Community Edition)
+
+* https://docs.docker.com/engine/installation
+
+**Get started Docker tutorial:**
+
+* https://docs.docker.com/get-started
+
+We **strongly** encourage you to follow the tutorial, and learn how to build, run, pull and push a container.
 
 ## 1. Get started
+
+In order to avoid building the image from scratch, a prebuilt image is made available from DockerHub, see below.
 
 ### 1.1. Pull image
 
@@ -148,7 +165,7 @@ In order to make sharing of folders easier between the container and your host, 
 echo $UID
 ```
 
-## Troubleshooting
+## 3. Troubleshooting
 
 #### Issue: 127.0.0.1 refused to connect
 
