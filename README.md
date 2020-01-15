@@ -15,9 +15,9 @@ It additionnally installs
 
 In order to avoid building the image from scratch, a prebuilt image is made available from DockerHub, see below.
 
-## 3. Get started
+## 1. Get started
 
-### 3.1. Pull image
+### 1.1. Pull image
 
 #### Pull image and create a folder for your Project
 
@@ -56,9 +56,9 @@ chmod -R a+rwx .
 
 The Docker container should now be able to read/write to your **host ```Geospatial_KafkaSpark``` folder**.
 
-### 3.2. Start container
+### 1.2. Start container
 
-### 3.2.1. Start Docker container
+### 1.2.1. Start Docker container
 
 From the ```Geospatial_KafkaSpark ``` folder, start the container with
 
@@ -82,7 +82,7 @@ ssh -p 23 guest@containerIP
 where 'containerIP' is the IP of th container (127.0.0.1 on Linux). Password is 'guest'.
 
 
-### 3.2.2. Start Streaming Services 
+### 1.2.2. Start Services 
 
 Once run, you are logged in as root in the container. Run the startup_script.sh (in /usr/bin) to start
 
@@ -94,7 +94,7 @@ Once run, you are logged in as root in the container. Run the startup_script.sh 
 startup_script.sh
 ```
 
-### Connect, open notebook and start streaming
+### 1.2.3. Connect, open notebook and start streaming
 
 Connect as user 'guest' and go to 'host' folder (shared with the host)
 
@@ -123,7 +123,7 @@ Open sparkStreamingPredictionsOBU.ipynb and run cells up to start streaming.
 It is available in your browser at port 4040
 
 
-# Container configuration details
+## 2. Container configuration details
 
 The container is based on CentOS 6 Linux distribution. The main steps of the building process are
 
