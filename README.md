@@ -2,22 +2,22 @@
 
 This Dockerfile sets up a complete streaming environment for experimenting with Kafka and Spark streaming (PySpark). It installs
 
-* Kafka 2.4.0
-* Spark 2.4.4 
+* Kafka 2.4.0;
+* Spark 2.4.4. 
 
 It additionnally installs
 
-* Anaconda distribution for Python 3.7
-* Jupyter notebook for Python 
-* Geopandas python package for geospatial data (http://geopandas.org/index.html)
+* Anaconda distribution for Python 3.7;
+* Jupyter notebook for Python; 
+* Geopandas python package for geospatial data (http://geopandas.org/index.html).
 
 #### Container configuration details
 
 The container is based on CentOS 6 Linux distribution. The main steps of the building process are
 
-* Install some common Linux tools (wget, unzip, tar, ssh tools, ...), and Java (1.8)
-* Create a guest user (UID important for sharing folders with host!, see below), and install Spark and sbt, Kafka, Anaconda and Jupyter notbooks for the guest user
-* Go back to root user, and install startup script (for starting SSH and Cassandra services), sentenv.sh script to set up environment variables (JAVA, Kafka, Spark, ...), spark-default.conf, and Cassandra 
+* Install some common Linux tools (wget, unzip, tar, ssh tools, ...), and Java (1.8);
+* Create a guest user and install Spark and sbt, Kafka, Anaconda and Jupyter notbooks for the guest user;
+* Go back to root user, and install startup script (for starting SSH), sentenv.sh script to set up environment variables (JAVA, Kafka, Spark, ...) and spark-default.conf.
 
 
 #### User UID
@@ -36,10 +36,10 @@ In order to make sharing of folders easier between the container and your host, 
 echo $UID
 ```
 
-
 to start using the docker container follow:
 
 1) Build and run the container
+
 2) Quick container start-up 
 
 ## 1. Build and run the container 
@@ -63,7 +63,7 @@ It may take some time to complete.
 ### Run
 
 ```
-docker run -v `pwd`:/home/guest/host -p 4040:4040 -p 8888:8888 -p 23:22 -ti --privileged kafkasparkgio
+docker run -p 4040:4040 -p 8888:8888 -p 23:22 -ti --privileged kafkasparkgio
 ```
 
 
@@ -77,6 +77,10 @@ docker run -p 4040:4040 -p 8888:8888 -p 23:22 -ti --privileged kafkasparkgio
 
 Note that any changes you make in the notebook will be lost once you exit de container. In order to keep the changes, it is necessary put your notebooks in a folder on your host, that you share with the container, using for example
 
+```
+docker run -v `pwd`:/home/guest/host -p 4040:4040 -p 8888:8888 -p 23:22 -ti --privileged yannael/kafka-sparkstreaming-cassandra
+```
+
 ### Note for 1. and 2.
 
 * The "-v `pwd`:/home/guest/host" shares the local folder (i.e. folder containing Dockerfile, ipynb files, etc...) on your computer - the 'host') with the container in the '/home/guest/host' folder. 
@@ -86,7 +90,7 @@ Note that any changes you make in the notebook will be lost once you exit de con
     * 8888 bridges to the Jupyter Notebook
     * 23 bridges to SSH
 
-SSH allows to get a onnection to the container
+SSH allows to get a connection to the container
 
 ```
 ssh -p 23 guest@containerIP
