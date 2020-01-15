@@ -47,7 +47,7 @@ to start using the docker container follow:
 ### Clone this repository
 
 ```
-$ git clone https://github.com/kafkasparkgio
+$ git clone https://gitlab.com/giobbu/sparkstreamingproject
 ```
 
 ### Build
