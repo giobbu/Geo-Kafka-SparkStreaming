@@ -1,4 +1,4 @@
-# Docker container for Kafka - Spark Streaming (PySpark)
+# Docker container for Big Data Geospatial Analysis in Kafka & Spark Streaming (PySpark)
 
 This Dockerfile sets up a complete streaming environment for experimenting with Kafka and Spark streaming (PySpark). It installs
 
