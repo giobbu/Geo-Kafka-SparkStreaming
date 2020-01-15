@@ -132,6 +132,6 @@ Open kafkaSparkReceive.ipynb and run cells up to start streaming.
 
 #### Connect to Spark UI
 
-It is available in your browser at port 4040.
+It is available in your browser at port 4050.
 
 
